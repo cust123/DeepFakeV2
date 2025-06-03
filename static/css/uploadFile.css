@@ -1,0 +1,103 @@
+:root {
+    --primary: #007bff;
+    --primary-hover: #0056b3;
+    --bg: #f8f9fa;
+    --border: #d1d1d1;
+    --text: #212529;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--text);
+}
+
+p {
+    font-size: 16px;
+    color: #6c757d;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropzone {
+    width: 100%;
+    min-height: 200px;
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background: var(--bg);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    padding: 20px;
+}
+
+.dropzone:hover {
+    border-color: var(--primary);
+    background: #eef4ff;
+}
+
+.upload-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.file-name {
+    font-weight: bold;
+    margin-top: 10px;
+    color: var(--text);
+}
+
+.file-input {
+    display: none;
+}
+
+.preview-container {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preview-container img, 
+.preview-container video {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+}
+
+.btn-submit {
+    margin-top: 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: var(--primary-hover);
+}

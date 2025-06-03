@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid" style="padding-right: 0px !important; padding-left: 0px !important;">
+    <section class="about-hero">
+        <h1>Privacy Policy</h1>
+        <p class="hero-subtext">Our Commitment to Your Data Privacy and Digital Integrity</p>
+    </section>
+</div>
+
+<div class="about-container">
+
+<div class="about-container" style="margin-top: 3vw;">
+
+    <!-- Privacy Policy Section -->
+    <section class="about-section shadow" style="padding: 2vw;">
+        <div class="section-header">
+            <h2 class="primaryColor">Our Privacy Policy</h2>
+            <div class="header-line"></div>
+        </div>
+        <div class="policy-content" style="line-height: 1.6; font-size: 1.1rem;">
+            <p>We value your trust and are committed to protecting your personal information. This privacy policy outlines the type of data we collect, how we use it, and the steps we take to safeguard it. We adhere to industry standards to ensure that your data is processed securely and transparently.</p>
+            <ul style="margin-top: 1vw;">
+                <li><strong>Data Collection:</strong> We only collect data necessary for the operation of our deepfake detection services, such as email addresses for account management and session information during usage.</li>
+                <li><strong>Data Usage:</strong> Your data is used solely for account management and improving our services. We do not share your information with any third parties without your consent.</li>
+                <li><strong>Security Measures:</strong> Our systems employ robust security protocols including encryption, secure storage, and regular audits to protect your data.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Dubai Deepfake Rules Section -->
+    <section class="about-section shadow" style="padding: 2vw; margin-top: 3vw;">
+        <div class="section-header">
+            <h2 class="primaryColor">Dubai Deepfake Rules & Regulations</h2>
+            <div class="header-line"></div>
+        </div>
+        <div class="rules-content" style="line-height: 1.6; font-size: 1.1rem;">
+            <p>In the wake of rapidly advancing digital technologies, Dubai has implemented specific rules to mitigate the misuse of deepfake technologies. Our platform complies with these local regulations to promote digital authenticity and prevent manipulation.</p>
+            <ul style="margin-top: 1vw;">
+                <li><strong>Compliance:</strong> Our tools are designed to detect and flag manipulated content in accordance with Dubai’s regulatory standards.</li>
+                <li><strong>Transparency:</strong> We provide clear information about how deepfake detection works and what measures are in place to ensure compliance.</li>
+                <li><strong>Reporting:</strong> Users are encouraged to report any suspicious content. Our team collaborates with local authorities when necessary.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Website Data Handling Section -->
+    <section class="about-section" style="padding: 2vw; margin-top: 3vw;">
+        <div class="section-header">
+            <h2 class="primaryColor">Website Data Handling & User Rights</h2>
+            <div class="header-line"></div>
+        </div>
+        <div class="data-content" style="line-height: 1.6; font-size: 1.1rem;">
+            <p>Our commitment to privacy extends beyond compliance. We empower our users with rights over their personal data, including:</p>
+            <ul style="margin-top: 1vw;">
+                <li><strong>Access & Correction:</strong> You have the right to access your personal data and request corrections if necessary.</li>
+                <li><strong>Data Deletion:</strong> Users can request deletion of their data in compliance with local data protection laws.</li>
+                <li><strong>Usage Transparency:</strong> We inform you about the ways in which your data is processed and used on our website.</li>
+            </ul>
+            <p>If you have any concerns regarding data handling or privacy, please contact our support team for further assistance.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="FAQsection px-4" style="margin-top: 3vw;">
+        <div class="section-header">
+            <h2 class="primaryColor">Frequently Asked Questions</h2>
+            <div class="header-line"></div>
+        </div>
+        <div class="accordion" id="privacyAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
+                        What personal data do we collect?
+                    </button>
+                </h2>
+                <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne">
+                    <div class="accordion-body">
+                        We collect minimal data necessary to run our services. This typically includes your email address, usage logs, and session information.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                        How do we protect your data?
+                    </button>
+                </h2>
+                <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo">
+                    <div class="accordion-body">
+                        We employ industry-standard security measures such as encryption, secure data storage, and regular audits to protect your information.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeadingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
+                        What are the Dubai deepfake rules?
+                    </button>
+                </h2>
+                <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree">
+                    <div class="accordion-body">
+                        Dubai’s rules focus on preventing the malicious use of deepfake technology by ensuring that detection tools are in place and that any misuse is reported and addressed according to local law.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock %}

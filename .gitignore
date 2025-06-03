@@ -1,0 +1,62 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
+.env
+.venv/
+venv/
+env/
+ENV/
+
+# Flask instance folder
+instance/
+
+# Flask cache and session data
+*.db
+*.sqlite3
+
+# PyCharm / VS Code / other IDEs
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# TensorFlow/Keras model files
+*.h5
+*.keras
+my_deepfake_model_with_fine_tuning_04_April_part2.keras
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Uploads / static files (if applicable)
+uploads/
+static/uploads/
+
+# Pip files
+pip-wheel-metadata/
+__pypackages__/
+
+# Compiled object files
+*.so
+
+# Test coverage / pytest
+htmlcov/
+.tox/
+.nox/
+.coverage
+.cache
+.pytest_cache/
+
+# Docker / deployment
+*.pid
+*.tar
+*.tgz
+*.bak

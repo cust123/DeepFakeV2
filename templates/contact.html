@@ -1,0 +1,40 @@
+
+
+<!-- contact.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div style="width: 100%; display: flex; justify-content: center; margin-top: 5vw">
+
+    <div class="shadow"
+        style="background-color: #fff; min-width: 50vw;  padding: 2vw 4vw; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 0.5vw;">
+        <div style="font-size: 2vw; font-weight: 700; " class="">Contact Us Today</div>
+        <div class="header-line"></div>
+
+  
+        <!-- form -->
+        <form style="margin-top: 2vw; min-width: 50vw; " >
+            <div style="display: flex; flex-direction: column;  margin-left: 2vw;">
+                <div style="font-size: 1.2vw; margin-bottom: 0.5vw; ">Full Name*</div>
+                <input type="text" class="auth-input" required placeholder="Full Name" id="fullName">
+            </div>
+            <div style="display: flex; flex-direction: column; margin-top: 1vw;  margin-left: 2vw; ">
+                <div style="font-size: 1.2vw; margin-bottom: 0.5vw;">Email*</div>
+                <input type="email" class="auth-input" required placeholder="abc@gmail.com" id="email">
+            </div>
+            <div style="display: flex; flex-direction: column; margin-top: 1vw;  margin-left: 2vw;">
+                <div style="font-size: 1.2vw; margin-bottom: 0.5vw;">Your Message*</div>
+                <textarea  id="conatctMessage"  class="auth-input" rows="5" required placeholder="Type your full message here"></textarea>
+            </div>
+            <div style="width: 90%; align-items: center; text-align: end;">
+                <button type="submit" class="btn button-30  px-5 my-5">Send Message</button>
+
+         
+          
+            </p>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

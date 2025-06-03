@@ -1,0 +1,194 @@
+<link rel="stylesheet" href="../static/css/index.css" />
+{% extends "base.html" %} {% block content %}
+<div
+  class="container-fluid"
+  style="padding: 0 !important; position: relative; overflow: hidden"
+>
+  <!-- Background Video -->
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    id="bg-video"
+    style="
+      opacity: 0.4;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    "
+  >
+    <source src="../static/images/indexBanner.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div
+    style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: -1;
+    "
+  ></div>
+
+  <section
+    class="index-hero"
+    style="position: relative; z-index: 1; text-align: center; color: white"
+  >
+    <h1 style="font-weight: 600; color: aqua">AI-Powered Deepfake Detection</h1>
+    <p>Detect fake images and videos instantly with cutting-edge AI.</p>
+
+    <a
+      href="/deepfake-checker"
+      role="button"
+      class="btn button-30 pt-2 px-5 my-3"
+      >Check Now</a
+    >
+  </section>
+</div>
+
+<section class="about-us">
+  <div class="about-container">
+    <div class="about-image">
+      <img
+        src="{{ url_for('static', filename='images/indexAboutusImage.jpg') }}"
+        alt="About Us Image"
+      />
+    </div>
+    <div class="about-text">
+      <p>
+        <strong>Empowering Truth with AI-Powered Deepfake Detection</strong>
+      </p>
+      <p>
+        In an era of digital misinformation, our mission is to provide
+        cutting-edge deepfake detection solutions that help individuals,
+        businesses, and organizations verify the authenticity of images and
+        videos. Our AI-powered tool ensures that you can distinguish real from
+        fake in just a few clicks.
+      </p>
+      <p>
+        With advanced machine learning algorithms and real-time analysis, we
+        make detecting manipulated media effortless, secure, and accurate.
+        Whether you're a journalist, researcher, or just curious about online
+        content, our platform is built to help you uncover the truth.
+      </p>
+      <a href="/contact" role="button" class="btn button-30 pt-2 px-5"
+        >Get in Touch</a
+      >
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <h2 class="primaryColor">How It Works</h2>
+  <div class="header-line"></div>
+  <div class="steps">
+    <div class="step">
+      <span>1</span>
+      <img class="stepIcon" src="../static/images/uploadIcon.png" />
+      <p>Upload your image or video</p>
+    </div>
+    <div class="step">
+      <span>2</span>
+      <img class="stepIcon" src="../static/images/faceScanIcon.jpg" />
+      <p>AI scans for deepfake patterns</p>
+    </div>
+    <div class="step">
+      <span>3</span>
+      <img class="stepIcon" src="../static/images/ResultIcon.png" />
+      <p>Receive instant authenticity results</p>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose-us">
+  <h2 class="primaryColor">Why Choose Our Deepfake Detector?</h2>
+  <div class="header-line"></div>
+  <h2></h2>
+  <div class="feature-cards">
+    <div class="step">
+      <h3>AI-Powered Accuracy</h3>
+      <p>Uses advanced deep learning models for reliable detection.</p>
+    </div>
+    <div class="step">
+      <h3>Fast & Secure</h3>
+      <p>Analyze files in seconds while keeping your data private.</p>
+    </div>
+    <div class="step">
+      <h3>Super Easy to Use</h3>
+      <p>
+        Upload your file , Scan the file on just one click and get results
+        instantly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="statistics">
+  <h2>Deepfake Detection Stats</h2>
+  <p>Over <strong>50,000+</strong> images and videos analyzed!</p>
+</section>
+
+<section class="gallery">
+  <h2>Real vs. Deepfake</h2>
+  <div class="image-grid">
+    <img
+      src="{{ url_for('static', filename='images/real2.png') }}"
+      alt="Real Image"
+    />
+    <img
+      src="{{ url_for('static', filename='images/fake2.png') }}"
+      alt="Deepfake Image"
+    />
+    <img
+      src="{{ url_for('static', filename='images/real.png') }}"
+      alt="Real Image"
+    />
+    <img
+      src="{{ url_for('static', filename='images/fake.png') }}"
+      alt="Deepfake Image"
+    />
+  </div>
+</section>
+
+<section class="tips">
+  <h2 class="primaryColor">Tips to Spot Deepfakes</h2>
+  <div class="header-line"></div>
+  <ul>
+    <li>Check for unnatural facial movements.</li>
+    <li>Look for inconsistencies in lighting and shadows.</li>
+    <li>Listen for robotic or altered voices.</li>
+    <li>Use AI-powered tools like ours for verification.</li>
+  </ul>
+</section>
+
+<!--  Contact Us -->
+<section class="contact">
+  <h2 class="primaryColor">Contact Us</h2>
+  <p style="font-size: 1.2rem">
+    Have questions? Reach out to our support team!
+  </p>
+  <a href="/contact" role="button" class="btn button-30 pt-2 px-5"
+    >Get in Touch</a
+  >
+</section>
+
+<!--  CTA Section -->
+<section class="statistics">
+  <h2>Try Deepfake Detector Now!</h2>
+  <a href="/deepfake-checker" role="button" class="btn button-30 pt-2 px-5"
+    >Start Analysis</a
+  >
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("bg-video").playbackRate = 0.5; // Slow down the video
+  });
+</script>
+{% endblock %}

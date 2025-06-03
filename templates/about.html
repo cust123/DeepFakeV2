@@ -1,0 +1,192 @@
+<!-- about.html -->
+{% extends "base.html" %} {% block content %}
+
+<div
+  class="container-fluid"
+  style="padding-right: 0px !important; padding-left: 0px !important"
+>
+  <section class="about-hero">
+    <h1>Combating Digital Deception with AI-Powered Solutions</h1>
+    <p class="hero-subtext">
+      Pioneering deepfake detection technology since 2022
+    </p>
+  </section>
+</div>
+
+<div class="about-container">
+  <!-- Mission Section -->
+  <section class="about-section shadow">
+    <div class="section-header">
+      <h2 class="primaryColor">Our Mission</h2>
+      <div class="header-line"></div>
+    </div>
+    <div class="mission-content">
+      <p>
+        The rise of AI-generated content has made it increasingly difficult to
+        distinguish real from fake. As deepfakes become more sophisticated, the
+        need for reliable verification tools is more critical than ever. In the
+        era of synthetic media, we empower users with cutting-edge detection
+        tools to:
+      </p>
+      <div class="mission-points">
+        <div class="mission-card">
+          <h3>🛡️ Verify Authenticity</h3>
+          <p>
+            Analyze digital content with 98.7% accuracy using multi-modal AI
+            systems
+          </p>
+        </div>
+        <div class="mission-card">
+          <h3>🔍 Expose Manipulations</h3>
+          <p>Detect facial manipulations, voice cloning, and scene anomalies</p>
+        </div>
+        <div class="mission-card">
+          <h3>🌍 Protect Digital Integrity</h3>
+          <p>Serve journalists, governments, and everyday users globally</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="about-section">
+    <div class="section-header">
+      <h2 class="primaryColor">Our Technology</h2>
+      <div class="header-line"></div>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card shadow">
+        <h3>Deep Neural Analysis</h3>
+        <p>Proprietary ensemble models analyzing 127+ facial micro-movements</p>
+      </div>
+      <div class="tech-card shadow">
+        <h3>Contextual Verification</h3>
+        <p>Metadata analysis and source verification systems</p>
+      </div>
+      <div class="tech-card shadow">
+        <h3>Continuous Learning</h3>
+        <p>Self-improving AI updated hourly with new threat data</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="about-section">
+    <div class="section-header">
+      <h2 class="primaryColor">Leadership Team</h2>
+      <div class="header-line"></div>
+    </div>
+    <div class="team-grid">
+      <div class="team-card shadow">
+        <img src="/static/images/coloredTeamMember.png" alt="CEO" />
+        <h3>Reem Abdullah</h3>
+        <span>Graduate Student</span>
+        <p>IT Security and Networking, Zayed University</p>
+      </div>
+      <div class="team-card shadow">
+        <img src="/static/images/coloredTeamMember.png" alt="CTO" />
+        <h3>Fatima Faisal</h3>
+        <span>Graduate Student</span>
+        <p>IT Security and Networking, Zayed University</p>
+      </div>
+      <div class="team-card shadow">
+        <img src="/static/images/coloredTeamMember.png" alt="CTO" />
+        <h3>Hamda Al Hosani</h3>
+        <span>Graduate Student</span>
+        <p>IT Security and Networking, Zayed University</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+
+  <section class="FAQsection px-4">
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne"
+            aria-expanded="true"
+            aria-controls="panelsStayOpen-collapseOne"
+          >
+            1. How accurate is your deepfake detection?
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="panelsStayOpen-headingOne"
+        >
+          <div class="accordion-body">
+            Our deepfake detection models achieve an industry-leading
+            <code>98.7% </code> accuracy across benchmark datasets. By utilizing
+            multi-modal AI, we analyze facial micro-expressions, voice patterns,
+            and metadata to detect manipulations. Our models continuously
+            improve through real-world testing and updates, ensuring they stay
+            ahead of emerging deepfake threats.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseTwo"
+            aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseTwo"
+          >
+            2. Do you store uploaded media files?
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="panelsStayOpen-headingTwo"
+        >
+          <div class="accordion-body">
+            <strong>No</strong>, we prioritize user privacy and security. All
+            uploaded images and videos are processed in-memory and automatically
+            deleted after analysis. We do not store, share, or use any files
+            beyond the detection process, ensuring complete confidentiality.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseThree"
+            aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseThree"
+          >
+            3. Can your tool detect all types of deepfakes?
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="panelsStayOpen-headingThree"
+        >
+          <div class="accordion-body">
+            Our AI-powered detection system is highly advanced, identifying
+            <strong>
+              face swaps, synthetic voices, and manipulated videos
+            </strong>
+            with high precision. While no tool can guarantee 100% detection, our
+            continuous AI training and multi-layered analysis significantly
+            reduce false negatives and improve overall detection accuracy.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% endblock %}

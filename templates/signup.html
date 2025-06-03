@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="width: 100%; display: flex; justify-content: center; margin-top: 5vw">
+    <div class="shadow"
+        style="background-color: #fff; padding: 2vw 4vw; display: flex; flex-direction: column; align-items: center; border-radius: 0.5vw; width: 100%; max-width: 500px;">
+        <div style="font-size: 2rem; font-weight: 700; color: #333;">Sign Up</div>
+        <div class="header-line" style="height: 2px; background: #007bff; width: 50px; margin: 0.5rem 0 1.5rem;"></div>
+
+        {% if error %}
+        <div class="alert alert-danger" style="color: #721c24; background-color: #f8d7da; padding: 0.75rem 1.25rem; margin-bottom: 1rem; border: 1px solid transparent; border-radius: 0.25rem; width: 100%;">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST" action="/signup" style="width: 100%;">
+            <div style="margin-top: 1rem;">
+                <div style="display: flex; flex-direction: column; margin-bottom: 1.5rem;">
+                    <label style="font-size: 1rem; margin-bottom: 0.5rem; color: #495057;">Full Name*</label>
+                    <input type="text" class="auth-input" name="name" 
+                           placeholder="Full Name" required
+                           style="padding: 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem; font-size: 1rem;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; margin-bottom: 1.5rem;">
+                    <label style="font-size: 1rem; margin-bottom: 0.5rem; color: #495057;">Email*</label>
+                    <input type="email" class="auth-input" name="email"
+                           placeholder="abc@gmail.com" required
+                           style="padding: 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem; font-size: 1rem;">
+                </div>
+
+                <div style="display: flex; flex-direction: column; margin-bottom: 1.5rem;">
+                    <label style="font-size: 1rem; margin-bottom: 0.5rem; color: #495057;">Phone*</label>
+                    <input type="text" class="auth-input" name="phone"
+                           placeholder="05X-XXX-XXXX" required
+                           maxlength="12" 
+                           oninput="formatDubaiMobileNumber(this)"
+                           style="padding: 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem; font-size: 1rem;">
+                    <small id="phone-error" style="color: red; display: none;">
+                        Number must start with 05 (05X-XXX-XXXX)
+                    </small>
+                </div>
+
+                <div style="display: flex; flex-direction: column; margin-bottom: 1.5rem;">
+                    <label style="font-size: 1rem; margin-bottom: 0.5rem; color: #495057;">Password*</label>
+                    <input type="password" class="auth-input" name="password"
+                           placeholder="********" required minlength="8"
+                           style="padding: 0.75rem; border: 1px solid #ced4da; border-radius: 0.25rem; font-size: 1rem;">
+                </div>
+
+                <button type="submit" class="auth-btn" 
+                        style="width: 100%; padding: 0.75rem; background-color: #007bff; color: white; border: none; border-radius: 0.25rem; font-size: 1rem; cursor: pointer;">
+                    Sign Up
+                </button>
+
+                <div style="text-align: center; margin-top: 1.5rem; color: #6c757d;">
+                    Already have an account? 
+                    <a href="/signin" style="color: #007bff; text-decoration: none;">Sign In</a>
+                </div>
+
+                <p class="log-text" style="text-align: center; margin-top: 1.5rem; color: #6c757d; font-size: 0.9rem;">
+                    By continuing, you agree to our 
+                    <a href="/terms" style="color: #007bff; text-decoration: none;">Terms of Service</a> and 
+                    <a href="/privacy" style="color: #007bff; text-decoration: none;">Privacy Policy</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function formatDubaiMobileNumber(input) {
+    let value = input.value.replace(/\D/g, '');
+    let errorMessage = document.getElementById("phone-error");
+
+    if (value.startsWith("05")) {
+        errorMessage.style.display = "none";
+        if (value.length > 2) {
+            value = value.slice(0, 10); // Limit to 10 digits
+            value = value.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+        }
+    } else {
+        errorMessage.style.display = "block";
+    }
+
+    input.value = value;
+}
+</script>
+{% endblock %}
