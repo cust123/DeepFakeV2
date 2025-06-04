@@ -59,16 +59,16 @@ def preprocess_image(image_path, target_size=(224, 224)):
     img = np.expand_dims(img, axis=0)
     return img
 
-# Manual prediction check (can be removed in production)
-image_path4 = 'uploads/Fake_00KEKJJ1Q4.jpg'
-input_image4 = preprocess_image(image_path4)
-prediction4 = Loaded_model.predict(input_image4)
-threshold = 0.6
-if prediction4[0][0] < threshold:
-    print("Manual Prediction: Fake")
-else:
-    print("Manual Prediction: Real")
-print(f"Manual Confidence Score: {prediction4[0][0]:.4f}")
+# # Manual prediction check (can be removed in production)
+# image_path4 = 'uploads/Fake_00KEKJJ1Q4.jpg'
+# input_image4 = preprocess_image(image_path4)
+# prediction4 = Loaded_model.predict(input_image4)
+# threshold = 0.6
+# if prediction4[0][0] < threshold:
+#     print("Manual Prediction: Fake")
+# else:
+#     print("Manual Prediction: Real")
+# print(f"Manual Confidence Score: {prediction4[0][0]:.4f}")
 
 # MongoDB connection using environment variable
 client = MongoClient(os.environ['MONGODB_URI'])
