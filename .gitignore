@@ -31,7 +31,7 @@ Thumbs.db
 # TensorFlow/Keras model files
 *.h5
 *.keras
-my_deepfake_model_with_fine_tuning_04_April_part2.keras
+!Google_Colab_my_deepfake_model_with_fine_tuning_04_April_part2.keras
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints

@@ -23,6 +23,9 @@ RUN pip install -r requirements.txt
 # Copy project files
 COPY . .
 
+# Explicitly copy the model file to ensure it's included in the image
+COPY Google_Colab_my_deepfake_model_with_fine_tuning_04_April_part2.keras /app/
+
 # Expose the port gunicorn will use
 EXPOSE 5000
 
