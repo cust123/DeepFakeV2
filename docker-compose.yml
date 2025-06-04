@@ -26,6 +26,8 @@ services:
       FLASK_APP: ${FLASK_APP}
       SECRET_KEY: ${SECRET_KEY}
       MONGO_URI: ${MONGO_URI}
+    volumes:
+      - ./Google_Colab_my_deepfake_model_with_fine_tuning_04_April_part2.keras:/app/Google_Colab_my_deepfake_model_with_fine_tuning_04_April_part2.keras
 
 volumes:
   mongo_data:
