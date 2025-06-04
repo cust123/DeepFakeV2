@@ -1,5 +1,4 @@
-# This tracks the main model file:
-# Google_Colab_my_deepfake_model_with_fine_tuning_04_April_part2.keras
+# Track all .keras files with Git LFS
 *.keras filter=lfs diff=lfs merge=lfs -text
-
+# Explicitly ensure this model file is tracked with LFS
 Google_Colab_my_deepfake_model_with_fine_tuning_04_April_part2.keras filter=lfs diff=lfs merge=lfs -text
