@@ -1,2 +1,5 @@
-# my_deepfake_model_with_fine_tuning_04_April_part2.keras filter=lfs diff=lfs merge=lfs -text
+# This tracks the main model file:
+# Google_Colab_my_deepfake_model_with_fine_tuning_04_April_part2.keras
+*.keras filter=lfs diff=lfs merge=lfs -text
+
 Google_Colab_my_deepfake_model_with_fine_tuning_04_April_part2.keras filter=lfs diff=lfs merge=lfs -text
