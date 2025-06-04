@@ -5,4 +5,5 @@ opencv-python
 numpy
 tensorflow
 keras
-
+gunicorn
+python-dotenv
