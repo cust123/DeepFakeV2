@@ -1,111 +1,267 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
     <style>
-        .navbar {
-            background-color: #343a40 !important;
-        }
-        .navbar-brand, .nav-link {
-            color: white !important;
-        }
+      .navbar {
+        background-color: #343a40 !important;
+      }
+      .navbar-brand,
+      .nav-link {
+        color: white !important;
+      }
     </style>
-</head>
-<body>
-    <nav class="darkBackground"
-         style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; border-bottom: 0.02vw #00000042 solid; padding: 1.2vw 2vw; user-select:none;">
-        <!-- logo -->
-        <a href="/">
-            <img src="static/images/logoNB3.png" alt="Deep Detector Logo" style="height: 6.5vw;">
-        </a>
-        <!-- context -->
-        <div style="display: flex; flex-direction: row; font-size: 1.2vw; font-weight: 600;">
-            <a href="/about" class="nav-context {% if request.path == '/about' %}active{% endif %}">About Us</a>
-            <a href="/deepfake-checker" style="margin-left: 1vw;" class="nav-context {% if request.path == '/deepfake-checker' %}active{% endif %}">Deep Checker</a>
-            <a href="/contact" style="margin-left: 1vw;" class="nav-context {% if request.path == '/contact' %}active{% endif %}">Contact Us</a>
-        </div>
-        <!-- Navigation Buttons -->
-        <div style="display: flex; flex-direction: row; font-size: 1vw; font-weight: 600;">
-            {% if session.get('user_id') %}
-                <a href="/logout" class="sign-btn"
-                   style="color:#F2F2F2; background-color: #1C385D; text-decoration: none; padding: 0.5vw 1vw;"
-                   id="logout-btn">Log Out</a>
-            {% else %}
-                <a href="/signin" class="sign-btn"
-                   style="background-color:#F2F2F2; color: #1C385D; border: 0.1vw #1C385D solid; text-decoration: none; padding: 0.5vw 1vw;"
-                   id="login">Sign In</a>
-                <a href="/signup" class="sign-btn"
-                   style="color:#F2F2F2; background-color: #2991c5; text-decoration: none; padding: 0.5vw 1vw; margin-left: 0.5vw;"
-                   id="signup">Sign Up</a>
-            {% endif %}
-        </div>
+  </head>
+  <body>
+    <nav
+      class="darkBackground"
+      style="
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.02vw #00000042 solid;
+        padding: 1.2vw 2vw;
+        user-select: none;
+      "
+    >
+      <!-- logo -->
+      <a href="/">
+        <img
+          src="static/images/logoNB3.png"
+          alt="Deep Detector Logo"
+          style="height: 6.5vw"
+        />
+      </a>
+      <!-- context -->
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          font-size: 1.2vw;
+          font-weight: 600;
+        "
+      >
+        <a
+          href="/about"
+          class="nav-context {% if request.path == '/about' %}active{% endif %}"
+          >About Us</a
+        >
+        <a
+          href="/deepfake-checker"
+          style="margin-left: 1vw"
+          class="nav-context {% if request.path == '/deepfake-checker' %}active{% endif %}"
+          >Deep Checker</a
+        >
+        <a
+          href="/contact"
+          style="margin-left: 1vw"
+          class="nav-context {% if request.path == '/contact' %}active{% endif %}"
+          >Contact Us</a
+        >
+      </div>
+      <!-- Navigation Buttons -->
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          font-size: 1vw;
+          font-weight: 600;
+        "
+      >
+        {% if session.get('user_id') %}
+        <a
+          href="/logout"
+          class="sign-btn"
+          style="
+            color: #f2f2f2;
+            background-color: #1c385d;
+            text-decoration: none;
+            padding: 0.5vw 1vw;
+          "
+          id="logout-btn"
+          >Log Out</a
+        >
+        {% else %}
+        <a
+          href="/signin"
+          class="sign-btn"
+          style="
+            background-color: #f2f2f2;
+            color: #1c385d;
+            border: 0.1vw #1c385d solid;
+            text-decoration: none;
+            padding: 0.5vw 1vw;
+          "
+          id="login"
+          >Sign In</a
+        >
+        <a
+          href="/signup"
+          class="sign-btn"
+          style="
+            color: #f2f2f2;
+            background-color: #2991c5;
+            text-decoration: none;
+            padding: 0.5vw 1vw;
+            margin-left: 0.5vw;
+          "
+          id="signup"
+          >Sign Up</a
+        >
+        {% endif %}
+      </div>
     </nav>
 
     <!-- Toast Container for Flash Messages -->
-    <div aria-live="polite" aria-atomic="true" style="position: fixed; top: 1rem; right: 1rem; z-index: 1080;">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="toast align-items-center text-white bg-{% if category=='success' %}success{% else %}danger{% endif %} border-0 mb-2" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
-                        <div class="d-flex">
-                            <div class="toast-body">
-                                {{ message }}
-                            </div>
-                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                        </div>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
+    <div
+      aria-live="polite"
+      aria-atomic="true"
+      style="position: fixed; top: 1rem; right: 1rem; z-index: 1080"
+    >
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div
+        class="toast align-items-center text-white bg-{% if category=='success' %}success{% else %}danger{% endif %} border-0 mb-2"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        data-bs-delay="5000"
+      >
+        <div class="d-flex">
+          <div class="toast-body">{{ message }}</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
     </div>
 
-    <div class="container-fluid" style="padding-right: 0 !important; padding-left: 0 !important;">
-        {% block content %}{% endblock %}
+    <div
+      class="container-fluid"
+      style="padding-right: 0 !important; padding-left: 0 !important"
+    >
+      {% block content %}{% endblock %}
     </div>
 
     <!-- Footer -->
-    <footer class="darkBackground"
-            style="display: flex; flex-direction: row; justify-content: space-between; margin-top: 10vw; padding:3vw 5vw 5vw;">
-        <!-- logo -->
-        <a href="/"
-           style="padding-top: 3.5vw; font-size: 1.7vw; font-weight: 600; font-family: Inter, sans-serif; cursor: pointer; text-decoration: none; color: #1C385D;">
-            <img src="static/images/logoNB3.png" alt="Deep Detector Logo" style="height: 6.5vw;">
-        </a>
-        <!-- Useful Links -->
-        <div>
-            <div style="font-size: 2vw; font-weight: 600;">Useful Links</div>
-            <div style="font-size: 1vw; margin-top: 0.4vw; display: flex; flex-direction: column; align-items: start; justify-content: start;">
-                <a href="/about" class="footer-items" style="text-decoration: none;">About Us</a>
-                <a href="/contact" style="margin-top: 0.4vw; text-decoration: none;" class="footer-items">Contact Us</a>
-                <a href="/deepfake-checker" style="margin-top: 0.4vw; text-decoration: none;" class="footer-items">Deep Checker</a>
-                <a href="/terms" style="margin-top: 0.4vw; text-decoration: none;" class="footer-items">Terms of Services</a>
-                <a href="privacy" style="margin-top: 0.4vw; text-decoration: none;" class="footer-items">Privacy Policy</a>
-            </div>
+    <footer
+      class="darkBackground"
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 10vw;
+        padding: 3vw 5vw 5vw;
+      "
+    >
+      <!-- logo -->
+      <a
+        href="/"
+        style="
+          padding-top: 3.5vw;
+          font-size: 1.7vw;
+          font-weight: 600;
+          font-family: Inter, sans-serif;
+          cursor: pointer;
+          text-decoration: none;
+          color: #1c385d;
+        "
+      >
+        <img
+          src="static/images/logoNB3.png"
+          alt="Deep Detector Logo"
+          style="height: 6.5vw"
+        />
+      </a>
+      <!-- Useful Links -->
+      <div>
+        <div style="font-size: 2vw; font-weight: 600">Useful Links</div>
+        <div
+          style="
+            font-size: 1vw;
+            margin-top: 0.4vw;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+          "
+        >
+          <a href="/about" class="footer-items" style="text-decoration: none"
+            >About Us</a
+          >
+          <a
+            href="/contact"
+            style="margin-top: 0.4vw; text-decoration: none"
+            class="footer-items"
+            >Contact Us</a
+          >
+          <a
+            href="/deepfake-checker"
+            style="margin-top: 0.4vw; text-decoration: none"
+            class="footer-items"
+            >Deep Checker</a
+          >
+          <a
+            href="/terms"
+            style="margin-top: 0.4vw; text-decoration: none"
+            class="footer-items"
+            >Terms of Services</a
+          >
+          <a
+            href="privacy"
+            style="margin-top: 0.4vw; text-decoration: none"
+            class="footer-items"
+            >Privacy Policy</a
+          >
         </div>
-        <!-- Reach Us -->
-        <div>
-            <div style="font-size: 2vw; font-weight: 600;">Reach Us</div>
-            <div style="font-size: 1vw; margin-top: 0.4vw; display: flex; flex-direction: column; align-items: start; justify-content: start;">
-                <div style="margin-top: 0.4vw;" class="footer-items footeraddress">+9712342354234</div>
-                <div style="margin-top: 0.4vw;" class="footer-items footeraddress">info@deepcheck.com</div>
-                <div style="margin-top: 0.4vw;" class="footer-items footeraddress">abu dhabi UAE</div>
-            </div>
+      </div>
+      <!-- Reach Us -->
+      <div>
+        <div style="font-size: 2vw; font-weight: 600">Reach Us</div>
+        <div
+          style="
+            font-size: 1vw;
+            margin-top: 0.4vw;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+          "
+        >
+          <div style="margin-top: 0.4vw" class="footer-items footeraddress">
+            +498575579739
+          </div>
+          <div style="margin-top: 0.4vw" class="footer-items footeraddress">
+            info@deepcheck.com
+          </div>
+          <div style="margin-top: 0.4vw" class="footer-items footeraddress">
+            Islamabad, Pakistan
+          </div>
         </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Initialize all toast elements on page load
-        document.addEventListener('DOMContentLoaded', function () {
-            var toastElList = [].slice.call(document.querySelectorAll('.toast'));
-            toastElList.forEach(function (toastEl) {
-                new bootstrap.Toast(toastEl).show();
-            });
+      // Initialize all toast elements on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        var toastElList = [].slice.call(document.querySelectorAll(".toast"));
+        toastElList.forEach(function (toastEl) {
+          new bootstrap.Toast(toastEl).show();
         });
+      });
     </script>
-</body>
+  </body>
 </html>
